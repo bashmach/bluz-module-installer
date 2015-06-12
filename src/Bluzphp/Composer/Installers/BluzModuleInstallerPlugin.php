@@ -64,8 +64,6 @@ class BluzModuleInstallerPlugin implements PluginInterface, EventSubscriberInter
     {
         $this->installer = new BluzModuleInstaller($io, $composer);
         $composer->getInstallationmanager()->addInstaller($this->installer);
-
-        $this->setRootPath(realpath($_SERVER['DOCUMENT_ROOT']));
     }
 
     /**
@@ -81,8 +79,8 @@ class BluzModuleInstallerPlugin implements PluginInterface, EventSubscriberInter
             PackageEvents::POST_PACKAGE_UPDATE  => array(
                 array( 'onPostUpdateCmd', 0 )
             ),
-            PackageEvents::POST_PACKAGE_UNINSTALL  => array(
-                array( 'onPostUninstallCmd', 0 )
+            PackageEvents::PRE_PACKAGE_UNINSTALL  => array(
+                array( 'onPreUninstallCmd', 0 )
             ),
         );
         return $result;
@@ -114,7 +112,7 @@ class BluzModuleInstallerPlugin implements PluginInterface, EventSubscriberInter
      *
      * @param Event $event
      */
-    public function onPostUninstallCmd(Event $event)
+    public function onPreUninstallCmd(Event $event)
     {
         $this->moduleUninstall();
     }
@@ -134,6 +132,8 @@ class BluzModuleInstallerPlugin implements PluginInterface, EventSubscriberInter
      */
     protected function moduleInstall()
     {
+        $this->setRootPath(realpath($_SERVER['DOCUMENT_ROOT']));
+
         $plugin = $this;
 
         array_map(function($handlerClass) use ($plugin) {
@@ -149,6 +149,8 @@ class BluzModuleInstallerPlugin implements PluginInterface, EventSubscriberInter
      */
     protected function moduleUninstall()
     {
+        $this->setRootPath(realpath($_SERVER['DOCUMENT_ROOT']));
+
         $plugin = $this;
 
         array_map(function($handlerClass) use ($plugin) {
