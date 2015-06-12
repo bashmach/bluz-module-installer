@@ -28,7 +28,7 @@ class TestsHandler extends CommonHandler
 
         $this->setPattern(
             'models',
-            $target = $this->getPlugin()->getRootPath() . DIRECTORY_SEPARATOR
+            $this->getPlugin()->getRootPath() . DIRECTORY_SEPARATOR
                 . 'tests' . DIRECTORY_SEPARATOR
                 . '%s' . DIRECTORY_SEPARATOR
                 . ucfirst($this->getPlugin()->getModuleName())
