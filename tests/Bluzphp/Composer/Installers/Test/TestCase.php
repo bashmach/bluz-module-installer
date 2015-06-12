@@ -4,7 +4,7 @@
  * @created 2015-03-26 13:18
  */
 
-namespace Bashmach\Composer\Installers\Test;
+namespace Bluzphp\Composer\Installers\Test;
 
 class TestCase extends  \Composer\Installers\Test
 {

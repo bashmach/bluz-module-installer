@@ -13,13 +13,13 @@
         >
     <testsuites>
         <testsuite name="Installers Test Suite">
-            <directory>tests/Bashmach/Composer</directory>
+            <directory>tests/Bluzphp/Composer</directory>
         </testsuite>
     </testsuites>
 
     <filter>
         <whitelist>
-            <directory>src/Bashmach/Composer</directory>
+            <directory>src/Bluzphp/Composer</directory>
         </whitelist>
     </filter>
 </phpunit>

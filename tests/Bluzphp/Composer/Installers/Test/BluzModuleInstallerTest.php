@@ -4,9 +4,9 @@
  * @created 2015-03-26 13:32
  */
 
-namespace Bashmach\Composer\Installers\Test;
+namespace Bluzphp\Composer\Installers\Test;
 
-use Bashmach\Composer\Installers\BluzModuleInstaller;
+use Bluzphp\Composer\Installers\BluzModuleInstaller;
 use Composer\Composer;
 use Composer\Config;
 use Composer\IO\IOInterface;

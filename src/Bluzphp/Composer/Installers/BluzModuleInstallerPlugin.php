@@ -4,7 +4,7 @@
  * @created 2015-03-24 12:39
  */
 
-namespace Bashmach\Composer\Installers;
+namespace Bluzphp\Composer\Installers;
 
 use Composer\Composer;
 use Composer\IO\IOInterface;

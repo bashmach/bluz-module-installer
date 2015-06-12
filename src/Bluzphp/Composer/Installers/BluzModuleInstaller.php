@@ -4,7 +4,7 @@
  * @created 2015-03-24 11:15
  */
 
-namespace Bashmach\Composer\Installers;
+namespace Bluzphp\Composer\Installers;
 
 use Composer\Package\PackageInterface;
 use Composer\Installer\LibraryInstaller;
