@@ -27,25 +27,6 @@ class BluzModuleInstallerPlugin implements PluginInterface, EventSubscriberInter
     protected $installer;
 
     /**
-     * @var null
-     */
-    protected $fs = null;
-
-    /**
-     * Path to public directory
-     *
-     * @var string
-     */
-    protected $publicPath;
-
-    /**
-     * Path to modules directory
-     *
-     * @var string
-     */
-    protected $modulePath;
-
-    /**
      * Path to root directory
      *
      * @var string
@@ -158,6 +139,13 @@ class BluzModuleInstallerPlugin implements PluginInterface, EventSubscriberInter
             $handler->uninstall();
 
         }, $this->getHandlers());
+
+        // remove module folder
+        $fs = new Filesystem();
+        $fs->remove(
+            $this->getRootPath() . DIRECTORY_SEPARATOR
+            . $this->getModulesPath() . DIRECTORY_SEPARATOR . $this->getModuleName()
+        );
     }
 
     /**
