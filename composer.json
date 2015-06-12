@@ -6,13 +6,13 @@
     "homepage": "https://github.com/Bluzphp/bluz-module-installer",
     "license": "MIT",
     "require": {
+        "composer/installers": "^1.0.0",
         "composer-plugin-api": "^1.0.0",
         "symfony/filesystem": "^2.7.1",
         "symfony/finder": "^2.7.1"
     },
     "require-dev": {
         "composer/composer": "^1.0.0@dev",
-        "composer/installers": "~1.0",
         "phpunit/phpunit": "~4.4"
     },
     "autoload": {
