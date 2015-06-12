@@ -137,6 +137,9 @@ class BluzModuleInstallerPlugin implements PluginInterface, EventSubscriberInter
     protected function moveTests()
     {
         $finder = new Finder();
+
+        var_dump($this->getModulePath() . $this->installer->getSettings('module_name'));die;
+
         $finder->directories()->in($this->getModulePath() . $this->installer->getSettings('module_name'))->path('tests/')->ignoreUnreadableDirs();
         $fs = $this->getFs();
         $testModulePath = $this->getRootPath() . DIRECTORY_SEPARATOR
