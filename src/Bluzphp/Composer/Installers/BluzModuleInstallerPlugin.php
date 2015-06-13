@@ -54,10 +54,10 @@ class BluzModuleInstallerPlugin implements PluginInterface, EventSubscriberInter
      */
     public static function getSubscribedEvents() {
         $result = array(
-            PackageEvents::POST_PACKAGE_INSTALL => array(
+            ScriptEvents::POST_INSTALL_CMD => array(
                 array( 'onPostInstallCmd', 0 )
             ),
-            PackageEvents::POST_PACKAGE_UPDATE  => array(
+            ScriptEvents::POST_UPDATE_CMD  => array(
                 array( 'onPostUpdateCmd', 0 )
             ),
             PackageEvents::PRE_PACKAGE_UNINSTALL  => array(
