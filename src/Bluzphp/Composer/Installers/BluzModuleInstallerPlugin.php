@@ -139,6 +139,16 @@ class BluzModuleInstallerPlugin implements PluginInterface, EventSubscriberInter
             $handler->uninstall();
 
         }, $this->getHandlers());
+
+        // remove module folder
+
+        $modulePath = $this->getRootPath() . DIRECTORY_SEPARATOR
+            . $this->getModulesPath() . DIRECTORY_SEPARATOR . $this->getModuleName();
+
+        $fs = new Filesystem();
+        if ($fs->exists($modulePath)) {
+            $fs->remove($modulePath);
+        }
     }
 
     /**
